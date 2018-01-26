@@ -9,9 +9,9 @@ Improvements where made to:
 - src/ukf.h
 - src/tools.cpp
 
-In ukf.cpp, __initialized__ the Filter, prepared the __Q__ and __F__ matrices for the prediction step, and called the __radar and lidar update__ functions.
-In kalman_filter.cpp, filled out the __Predict(), Update(), and UpdateEKF()__ functions.
-In tools.cpp, filled the functions that calculate root mean squared error (__RMSE__) and the __Jacobian matrix__.
+In ukf.cpp, __initialized__ the UKF and implemented the process model in __ProcessMeasurement__ function. Prepared matrices for __augmented sigma points__, __sigma point prediction of the current state__ and __prediction of mean and covariance__. Updated the filter calling related __radar and lidar update__ functions, finally calculated and wrote NIS to file __"NIS_data_file.cvs"__.
+In ukf.h completed parameter and function declarations.
+In tools.cpp, filled the functions that calculate root mean squared error (__RMSE__).
 
 Objective is implementing an unscented kalman filter in C++ to estimate the state of a moving object of interest with noisy lidar and radar measurements. 
 Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric, 
