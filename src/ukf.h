@@ -79,10 +79,7 @@ class UKF {
   double lambda_;
 
   //
-  double NIS_radar_;
-
-  //
-  double NIS_lidar_;
+  double NIS_;
 
   // file declaration
   std::ofstream NIS_data_file_;

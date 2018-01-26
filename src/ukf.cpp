@@ -387,21 +387,9 @@ void UKF::UpdateUKF(MeasurementPackage meas_package, MatrixXd &Zsig) {
 
   // CALCULATE AND PRINT NIS: NORMALIZED INNOVATION SQUARED
 
-  /**
-  if (meas_package.sensor_type_ == MeasurementPackage::RADAR) {
-    // Radar
-    NIS_radar_ = z_diff.transpose() * S.inverse() * z_diff;
-    std::cout << "NIS Radar: " << NIS_radar_ << std::endl;
-  } else if (meas_package.sensor_type_ == MeasurementPackage::LASER) {
-    // Lidar
-    NIS_lidar_ = z_diff.transpose() * S.inverse() * z_diff;
-    std::cout << "NIS Lidar: " << NIS_lidar_ << std::endl;
-  }
-  */
-
   // write NIS Info in two colums
-  NIS_radar_ = z_diff.transpose() * S.inverse() * z_diff;
-  NIS_data_file_ << NIS_radar_ << ",";
+  NIS_ = z_diff.transpose() * S.inverse() * z_diff;
+  NIS_data_file_ << NIS_ << ",";
   if (meas_package.sensor_type_ == MeasurementPackage::LASER) {
     NIS_data_file_ << "7.815,5.991" << std::endl;
   }
