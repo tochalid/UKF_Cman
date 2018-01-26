@@ -9,7 +9,7 @@ Improvements where made to:
 - src/ukf.h
 - src/tools.cpp
 
-In ukf.cpp, __initialized__ the UKF and implemented the process model in __ProcessMeasurement()__ function. Prepared matrices in function __Prediction()__ for __augmented sigma points__, __sigma point prediction__ and __prediction of mean and covariance__. Updated the filter calling related update functions __UpdateLidar()__ and __UpdateRadar()__, each calling __UpdateUKF()__ also calculating and writing NIS to file __"NIS_data_file.cvs"__.
+In ukf.cpp, __initialized__ the UKF and implemented the process model in __ProcessMeasurement()__ function. Prepared matrices and vectors in function __Prediction()__ for __augmented sigma points__, __sigma point prediction__ and __prediction of mean and covariance__. Updated the filter calling related update functions __UpdateLidar()__ and __UpdateRadar()__, each calling __UpdateUKF()__ also calculating and writing NIS to file __"NIS_data_file.cvs"__.
 In ukf.h completed parameter and function declarations.
 In tools.cpp, filled the functions that calculate root mean squared error __"RMSE"__.
 
